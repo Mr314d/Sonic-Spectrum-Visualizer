@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sonic Spectrum - Advanced Music Visualizer</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="music-visualizer-container">
+        <div class="glass-morphism-overlay"></div>
+        
+        <header class="app-header">
+            <div class="logo">
+                <i class="fas fa-wave-square"></i>
+                <h1>Sonic Spectrum</h1>
+            </div>
+            <nav class="app-controls">
+                <div class="file-upload-wrapper">
+                    <input type="file" id="audioFile" accept="audio/*" class="file-input">
+                    <label for="audioFile" class="file-upload-button">
+                        <i class="fas fa-upload"></i>
+                        <span>Upload Track</span>
+                    </label>
+                </div>
+                <div class="visualization-selector">
+                    <select id="visualizationType" class="vis-select">
+                        <optgroup label="Classic Modes">
+                            <option value="bars">Frequency Bars</option>
+                            <option value="circle">Radial Pulse</option>
+                        </optgroup>
+                        <optgroup label="Advanced Modes">
+                            <option value="nebula">Cosmic Nebula</option>
+                        </optgroup>
+                        <optgroup label="Experimental Modes">
+                            <option value="neural">Neural Network</option>
+                            <option value="quantum">Quantum Visualization</option>
+                            <option value="organic">Organic Flow</option>
+                        </optgroup>
+                    </select>
+                </div>
+            </nav>
+        </header>
+
+        <main class="visualization-container">
+            <canvas id="visualizerCanvas" class="main-canvas"></canvas>
+            <div class="audio-info-overlay">
+                <div class="track-details">
+                    <span id="trackName">No Track Loaded</span>
+                    <div class="audio-controls">
+                        <button id="playPauseBtn" class="control-btn">
+                            <i class="fas fa-play"></i>
+                        </button>
+                        <input type="range" id="volumeControl" min="0" max="1" step="0.1" value="1" class="volume-slider">
+                    </div>
+                </div>
+                <div class="audio-stats">
+                    <div class="stat-item">
+                        <i class="fas fa-tachometer-alt"></i>
+                        <span id="frequencyRange">0 Hz</span>
+                    </div>
+                    <div class="stat-item">
+                        <i class="fas fa-chart-line"></i>
+                        <span id="audioAmplitude">0 dB</span>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <div class="advanced-controls">
+            <div class="effect-controls">
+                <div class="color-mode-toggle">
+                    <label class="switch">
+                        <input type="checkbox" id="darkModeToggle">
+                        <span class="slider round"></span>
+                    </label>
+                    <span>Dark Mode</span>
+                </div>
+                <div class="color-palette">
+                    <button class="color-btn" data-color="#6a11cb" style="background-color: #6a11cb;"></button>
+                    <button class="color-btn" data-color="#2575fc" style="background-color: #2575fc;"></button>
+                    <button class="color-btn" data-color="#ff6b6b" style="background-color: #ff6b6b;"></button>
+                    <button class="color-btn" data-color="#4ecdc4" style="background-color: #4ecdc4;"></button>
+                </div>
+            </div>
+        </div>
+
+        <footer class="app-footer">
+            <div class="footer-content">
+                <p> 2024 Sonic Spectrum Visualizer</p>
+                <div class="social-links">
+                    <a href="https://github.com" class="social-icon"><i class="fab fa-github"></i></a>
+                    <a href="https://twitter.com" class="social-icon"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="visualizer.js"></script>
+</body>
+</html>
